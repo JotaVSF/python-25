@@ -70,10 +70,30 @@ def exibir_tarefas():
         print('-' * 50)
         print(f"ID: {tarefa['Id']} | Nome: {tarefa['Nome']} | Concluído: {status}")
     print('-' * 50 + '\n')
-    
-    if tarefas == 1:
-        print(f'Exbindo de maior prioridade:', tarefas)
 
-addTarefas()
-listar_tarefas()
-exibir_tarefas()
+def menu_tarefas():
+    while True:
+        print('''
+          Menu Principal:
+    1 - Adicionar nova tarefa
+    2 - Filtrar tarefas por prioridade
+    3 - Marcar tarefa como concluída
+    4 - Listar todas as tarefas
+    5 - Sair
+        ''')
+        menu = int(input('Escolha uma opção do menu: '))
+        if menu == 1:
+            addTarefas()
+        elif menu == 2:
+            exibir_tarefas()
+        elif menu == 3:
+            marcar_tarefas()
+        elif menu == 4:
+            listar_tarefas()
+        else:
+            menu == 5
+            print('SAINDO! Até logo...\n')
+            break
+
+if __name__ == "__main__":
+    menu_tarefas()
